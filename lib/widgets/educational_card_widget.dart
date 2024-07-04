@@ -18,7 +18,7 @@ class EducationalCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4,
+      elevation: 8,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -43,7 +43,7 @@ class EducationalCardWidget extends StatelessWidget {
                 const SizedBox(height: 8),
                 Text(
                   description,
-                  style: const TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 16, color: Colors.grey[700]),
                 ),
                 const SizedBox(height: 16),
                 Row(
@@ -53,11 +53,17 @@ class EducationalCardWidget extends StatelessWidget {
                       onPressed: onLearnMore,
                       icon: const Icon(Icons.book),
                       label: const Text('Learn More'),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white, backgroundColor: Theme.of(context).primaryColor,
+                      ),
                     ),
                     OutlinedButton.icon(
                       onPressed: onShare,
                       icon: const Icon(Icons.share),
                       label: const Text('Share'),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: Theme.of(context).primaryColor, side: BorderSide(color: Theme.of(context).primaryColor),
+                      ),
                     ),
                   ],
                 ),
